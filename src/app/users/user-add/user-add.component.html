@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Add user information here</h1>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="user@gmail.com" formControlName="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+      </p>
+</div>
