@@ -7,7 +7,7 @@ import { DataService } from 'src/app/data.service';
 })
 
 export class ListUsersComponent implements OnInit{
-  displayedColumns: string[] = ['firstName', 'lastName','address','dob'];
+  displayedColumns: string[] = ['firstName', 'lastName','address','dob','editButton'];
 
   constructor(public dataService: DataService,
   ) {
@@ -15,5 +15,9 @@ export class ListUsersComponent implements OnInit{
   }
   ngOnInit(): void {
     console.table(this.dataService.userData);
+  }
+  editUser(user: any) {
+    // Implement your edit logic here, e.g., navigate to an edit page with user details
+    // For example: this.router.navigate(['/users/edit', user.id]);
   }
 }

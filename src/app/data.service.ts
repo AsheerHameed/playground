@@ -50,4 +50,6 @@ export class DataService {
   addUser(user: any) {
     this.userData.push(user);
   }
+
+  
 }
