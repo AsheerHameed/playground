@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-user-add',
@@ -7,23 +10,53 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./user-add.component.scss'],
 })
 export class UserAddComponent {
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private dataService: DataService,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {}
 
   userForm = this.formBuilder.group({
-    email: [''],
+    email: [
+      '',
+      Validators.compose([Validators.minLength(10), Validators.required]),
+    ],
     firstName: [''],
     lastName: [''],
     address: [''],
     dob: [''],
   });
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  email = new FormControl('');
+  firstName = new FormControl('', [Validators.required]);
+  lastName = new FormControl('', [Validators.required]);
+  address = new FormControl('', [
+    Validators.required,
+    Validators.minLength(15),
+  ]);
 
+  get userFirstName() {
+    return this.userForm.get('firstName');
+  }
+  get userLastName() {
+    return this.userForm.get('lastName');
+  }
+  get userAddress() {
+    return this.userForm.get('address');
+  }
   getErrorMessage() {
     if (this.email.hasError('required')) {
-      return 'You must enter a value';
+      return 'You must enter a email';
     }
-
     return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
+  submit() {
+    console.log('user data is', this.userForm.value);
+    this.router.navigate(['/users']);
+    this.dataService.userData.push(this.userForm.value);
+    this.snackBar.open('User added', 'Close', {
+      duration: 3000,
+    });
   }
 }

@@ -8,8 +8,13 @@
 padding-top: 40px;
 }
 mat-form-field{
-    margin-right: 12px;
-}
-mat-datepicker-toggle{
     width: 100%;
+}
+mat-card{
+    padding: 15px;
+}
+mat-card-actions{
+display: flex;
+justify-content: center;
+align-items: center;
 }
