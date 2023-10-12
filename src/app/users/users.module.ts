@@ -16,9 +16,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
-  declarations: [UserAddComponent, ListUsersComponent, HomeComponent],
+  declarations: [UserAddComponent, ListUsersComponent, HomeComponent, UserEditComponent],
   imports: [
     CommonModule,
     RouterModule,

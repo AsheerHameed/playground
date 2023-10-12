@@ -18,9 +18,10 @@ export class UserAddComponent {
   ) {}
 
   userForm = this.formBuilder.group({
+    id:[this.dataService.lastId],
     email: [
       '',
-      Validators.compose([Validators.minLength(10), Validators.required]),
+      Validators.compose([Validators.email, Validators.required]),
     ],
     firstName: [''],
     lastName: [''],
@@ -52,11 +53,11 @@ export class UserAddComponent {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
   submit() {
-    console.log('user data is', this.userForm.value);
     this.router.navigate(['/users']);
     this.dataService.userData.push(this.userForm.value);
     this.snackBar.open('User added', 'Close', {
       duration: 3000,
     });
+    this.dataService.lastId++
   }
 }

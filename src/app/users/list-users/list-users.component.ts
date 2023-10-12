@@ -19,6 +19,6 @@ export class ListUsersComponent implements OnInit{
     console.table(this.dataService.userData);
   }
   editUser(user: any) {
-    this.router.navigate(['/users/edit/', user.id])
+    this.router.navigate(['/users/edit', user.id]);
   }
 }

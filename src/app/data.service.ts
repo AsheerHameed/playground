@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class DataService {
+  lastId :number = 6;
   userData: any[] = [
     {
       id: 1,
@@ -11,7 +12,7 @@ export class DataService {
       firstName: 'John',
       lastName: 'doe',
       address: 'Kolkata',
-      dob: '1990-05-15',
+      dob: 'Thu Oct 26 2023 10:45:00 GMT+0530 (India Standard Time)',
     },
     {
       id: 2,
@@ -19,7 +20,7 @@ export class DataService {
       firstName: 'Alice',
       lastName: 'smith',
       address:'Delhi',
-      dob: '1985-08-22',
+      dob: 'Fri Oct 27 2023 10:45:00 GMT+0530 (India Standard Time)',
     },
     {
       id: 3,
@@ -27,7 +28,7 @@ export class DataService {
       firstName: 'Bob',
       lastName: 'Johnson',
       address: 'Bangalore',
-      dob: '1988-12-10',
+      dob: 'Sat Oct 28 2023 10:45:00 GMT+0530 (India Standard Time)',
     },
     {
       id: 4,
@@ -35,7 +36,7 @@ export class DataService {
       firstName: 'Eve',
       lastName: ' Adams',
       address: 'Mumbai',
-      dob: '1995-03-25',
+      dob: 'Sun Oct 29 2023 10:45:00 GMT+0530 (India Standard Time)',
     },
     {
       id: 5,
@@ -43,7 +44,7 @@ export class DataService {
       firstName: 'Charlie',
       lastName: 'brown',
       address: 'Murdeshwar',
-      dob: '1982-07-05',
+      dob: 'Mon Oct 30 2023 10:45:00 GMT+0530 (India Standard Time)',
     },
   ];
 
@@ -51,5 +52,13 @@ export class DataService {
     this.userData.push(user);
   }
 
-  
+  updateUser(id: number, updatedUser: any) {
+    const index = this.userData.findIndex(user => user.id === id);
+    if (index !== -1) {
+      this.userData[index] = { ...this.userData[index], ...updatedUser };
+    }
+  }
+  getUserById(id: number) {
+    return this.userData.find((user) => user.id === id);
+  }
 }
