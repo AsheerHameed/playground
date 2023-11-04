@@ -7,6 +7,8 @@ import { CartModule } from './cart/cart.module';
 import { AdminModule } from './admin/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsersModule } from './users/users.module';
+import { HttpClientModule } from '@angular/common/http';
+import { MoviesAppModule } from './movies-app/movies-app.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -17,6 +19,8 @@ import { UsersModule } from './users/users.module';
     AdminModule,
     BrowserAnimationsModule,
     UsersModule,
+    HttpClientModule,
+    MoviesAppModule
   ],
   providers: [],
   bootstrap: [AppComponent],
