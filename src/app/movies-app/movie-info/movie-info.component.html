@@ -1,1 +1,33 @@
-<p>movie-info works!</p>
+<div class="container">
+
+  <div class="trailer"></div>
+
+
+  <div class="movie_info_container">
+    <div class="movie_title_group">
+      <div class="movie_title">
+        {{ title }} . {{ transformMinute(movieInfo.runtime) }} .
+      </div>
+      <div class="genres genre_buttons" *ngFor="let movie of movieInfo.genres">
+        {{ movie.name }}
+      </div>
+    </div>
+    
+    <div class="rating_and_icons_group">
+      <div class="icons">
+        <img src="assets/heart.png" alt="" />
+        <img src="assets/share.png" alt="" />
+        <img src="assets/bookmark-white.png" alt="" />
+      </div>
+      <div class="rating">
+        {{ movieInfo.vote_average.toString().slice(0, 3) }}⭐|
+        <p>{{ movieInfo.vote_count }}</p>
+      </div>
+    </div>
+
+    <!-- <div class="movie_info_poster">
+      <img src="http://image.tmdb.org/t/p/w500/{{ poster_path }}" />
+    </div> -->
+    <div class="movie_info_info"></div>
+  </div>
+</div>

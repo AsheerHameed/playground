@@ -9,6 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsersModule } from './users/users.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviesAppModule } from './movies-app/movies-app.module';
+import { RouterModule } from '@angular/router';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { PocModule } from './poc/poc.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -20,7 +23,9 @@ import { MoviesAppModule } from './movies-app/movies-app.module';
     BrowserAnimationsModule,
     UsersModule,
     HttpClientModule,
-    MoviesAppModule
+    MoviesAppModule,
+    RouterModule,
+    PocModule
   ],
   providers: [],
   bootstrap: [AppComponent],

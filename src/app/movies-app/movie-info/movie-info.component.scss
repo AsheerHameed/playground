@@ -1,0 +1,79 @@
+$font: "DM Sans";
+.container {
+  padding: 20px;
+}
+.movie_info_container {
+  display: flex;
+  padding: 20px 0;
+}
+
+.movie_title_group {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex: 4;
+}
+.movie_title {
+  font-family: $font;
+  font-size: 36px;
+  font-weight: 700;
+  color: #000;
+  line-height: 30px;
+}
+.trailer {
+  height: 350px;
+  width: 100%;
+  background-color: red;
+  border-radius: 10px;
+}
+.genres {
+  margin-left: 1rem;
+  text-align: center;
+  font-family: $font;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.genres:hover {
+  color: #ffffff;
+  background-color: #000;
+}
+.genre_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 84px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(232, 232, 232, 0.35);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+.movie_info_poster img {
+  width: 250px;
+  height: 370px;
+  border-radius: 10px;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
+.icons img {
+  height: 20px;
+  width: 20px;
+}
+
+.rating_and_icons_group {
+  display: flex;
+  justify-content: space-between;
+  flex: 2;
+  padding: 10px;
+}
+.rating {
+  padding-left: 5px;
+  flex: 1;
+  font-size: 20px;
+  font-weight: 500;
+}
